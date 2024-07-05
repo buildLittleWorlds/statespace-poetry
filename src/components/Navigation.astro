@@ -3,10 +3,41 @@
 ---
 
 <nav class="navbar clearfix">
-  <a href="/" class="full">Home</a> |
-  <a href="/poems" class="full">Poems</a> |
-  <a href="/poetics" class="full">Poetics</a> |
-  <a href="/ai-theory" class="full">AI Theory</a> |
-  <a href="/generative-art" class="full">Generative Art</a> |
-  <a href="/about" class="full">About</a>
+  <a href="/" class="full">Home</a><a href="/" class="abbr">H</a> |
+  <!-- other links -->
 </nav>
+
+<style>
+  .navbar {
+    text-align: center;
+    font-size: 0.8em;
+    margin-bottom: 20px;
+  }
+  .navbar a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 15px;
+    display: inline-block;
+  }
+  .navbar a:hover {
+    text-decoration: underline;
+  }
+  .navbar a.full {
+    display: inline;
+  }
+  .navbar a.abbr {
+    display: none;
+  }
+  @media (max-width: 480px) {
+    .navbar a.full {
+      display: none;
+    }
+    .navbar a.abbr {
+      display: inline;
+    }
+    .navbar {
+      font-size: 1em;
+      margin-bottom: 10px;
+    }
+  }
+</style>

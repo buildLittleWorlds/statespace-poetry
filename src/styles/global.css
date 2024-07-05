@@ -1,0 +1,16 @@
+:root {
+    --GW-serif-font-stack: "Source Serif Pro", "Apple Garamond",
+      "Baskerville", "Libre Baskerville", "Droid Serif", "Times New Roman",
+      "Times", serif, "Noto Emoji", "Quivira";
+  }
+  
+  body {
+    line-height: 1.4;
+    font-size: 16px;
+    padding: 0 25px;
+    margin: 25px auto;
+    max-width: 650px;
+    font-family: var(--GW-serif-font-stack);
+  }
+  
+  /* Other global styles */
