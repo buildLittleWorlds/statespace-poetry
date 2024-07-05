@@ -1,4 +1,6 @@
 ---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 const { title } = Astro.props;
 ---
 
@@ -57,23 +59,7 @@ const { title } = Astro.props;
     </style>
   </head>
   <body>
-    <nav class="navbar clearfix">
-      <a href="/" class="full">Home</a><a href="/" class="abbr">H</a> |
-      <a href="/poems" class="full">Poems</a><a href="/poems" class="abbr">P</a>
-      |
-      <a href="/poetics" class="full">Poetics</a><a href="/poetics" class="abbr"
-        >Po</a
-      > |
-      <a href="/ai-theory" class="full">AI Theory</a><a
-        href="/ai-theory"
-        class="abbr">AI</a
-      > |
-      <a href="/generative-art" class="full">Generative Art</a><a
-        href="/generative-art"
-        class="abbr">GA</a
-      > |
-      <a href="/about" class="full">About</a><a href="/about" class="abbr">A</a>
-    </nav>
+    <Header />
 
     <main id="maincontent">
       <slot />
@@ -83,5 +69,7 @@ const { title } = Astro.props;
     <div id="mc_embed_signup">
       <!-- Insert the newsletter signup form HTML here -->
     </div>
+
+    <Footer />
   </body>
 </html>
