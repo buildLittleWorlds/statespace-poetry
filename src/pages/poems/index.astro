@@ -1,0 +1,19 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+const poems = await getCollection("poems");
+---
+
+<Layout title="Poems">
+  <h1>Poems</h1>
+  <ul>
+    {
+      poems.map((poem) => (
+        <li>
+          <a href={`/poems/${poem.slug}`}>{poem.data.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+</Layout>

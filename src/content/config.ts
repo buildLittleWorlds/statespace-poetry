@@ -1,21 +1,19 @@
 import { defineCollection, z } from 'astro:content';
 
 const poemCollection = defineCollection({
-  type: 'content',
   schema: z.object({
     title: z.string(),
-    date: z.date(),
-    tags: z.array(z.string()).optional(),
+    relatedEssay: z.string().optional(),
+    date: z.date().optional(),
+    summary: z.string().optional(), // Add this if you want to use the summary field
   }),
 });
 
 const essayCollection = defineCollection({
-  type: 'content',
   schema: z.object({
     title: z.string(),
-    date: z.date(),
-    summary: z.string(),
-    relatedPoems: z.array(z.string()).optional(),
+    relatedPoem: z.string().optional(),
+    date: z.date().optional(), // Add this line
   }),
 });
 

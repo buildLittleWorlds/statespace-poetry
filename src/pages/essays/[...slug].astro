@@ -1,0 +1,32 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import { getRelatedContent } from "../../utils/getRelatedContent";
+
+export async function getStaticPaths() {
+  const essays = await getCollection("essays");
+  return essays.map((essay) => ({
+    params: { slug: essay.slug },
+    props: { essay },
+  }));
+}
+
+const { essay } = Astro.props;
+const { Content } = await essay.render();
+
+const relatedPoem = await getRelatedContent("essay", essay.slug);
+---
+
+<Layout title={essay.data.title}>
+  <h1>{essay.data.title}</h1>
+  <Content />
+
+  {
+    relatedPoem && (
+      <div>
+        <h2>Related Poem</h2>
+        <a href={`/poems/${relatedPoem.slug}`}>{relatedPoem.data.title}</a>
+      </div>
+    )
+  }
+</Layout>
