@@ -25,7 +25,9 @@ const relatedPoem = await getRelatedContent("essay", essay.slug);
     relatedPoem && (
       <div>
         <h2>Related Poem</h2>
-        <a href={`/poems/${relatedPoem.slug}`}>{relatedPoem.data.title}</a>
+        <p>
+          <a href={`/poems/${relatedPoem.slug}`}>{relatedPoem.data.title}</a>
+        </p>
       </div>
     )
   }

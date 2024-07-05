@@ -15,32 +15,38 @@ essays.sort(
 );
 ---
 
-<Layout title="Home">
-  <h1>State Space Poetry</h1>
+<Layout title="State Space Poetry">
+  <!-- <h1>State Space Poetry</h1> -->
 
-  <h2>Recent Poems</h2>
+  <h2>Poems</h2>
   <ul>
     {
       poems.map((poem) => (
         <li>
           <a href={`/poems/${poem.slug}`}>{poem.data.title}</a>
-          {poem.data.date && (
-            <p>Published on: {poem.data.date.toDateString()}</p>
-          )}
+          {/* {poem.data.date && (
+            <span>
+              {" "}
+              - Published on: {new Date(poem.data.date).toLocaleDateString()}
+            </span>
+          )} */}
         </li>
       ))
     }
   </ul>
 
-  <h2>Recent Essays</h2>
+  <h2>Essays</h2>
   <ul>
     {
       essays.map((essay) => (
         <li>
           <a href={`/essays/${essay.slug}`}>{essay.data.title}</a>
-          {essay.data.date && (
-            <p>Published on: {essay.data.date.toDateString()}</p>
-          )}
+          {/* {essay.data.date && (
+            <span>
+              {" "}
+              - Published on: {new Date(essay.data.date).toLocaleDateString()}
+            </span>
+          )} */}
         </li>
       ))
     }

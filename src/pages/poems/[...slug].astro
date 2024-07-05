@@ -20,20 +20,14 @@ const relatedEssay = await getRelatedContent("poem", poem.slug);
 <Layout title={poem.data.title}>
   <h1>{poem.data.title}</h1>
   <Content />
-  <!-- 
-  {
-    poem.data.summary && (
-      <p>
-        <strong>Summary:</strong> {poem.data.summary}
-      </p>
-    )
-  } -->
 
   {
     relatedEssay && (
       <div>
         <h2>Related Essay</h2>
-        <a href={`/essays/${relatedEssay.slug}`}>{relatedEssay.data.title}</a>
+        <p>
+          <a href={`/essays/${relatedEssay.slug}`}>{relatedEssay.data.title}</a>
+        </p>
       </div>
     )
   }
