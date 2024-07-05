@@ -1,7 +1,7 @@
 ---
 title: "Essay on Machine Poem"
 relatedPoem: "first-poem"
-date: 2023-07-05
+date: 2024-07-05
 ---
 
 At the center of a poem is its tension between form and content. If a poem is an out-pouring of emotion, its form should be rudimentary, only assisting when needed. There should be long lines to avoid stoppage and clogging. Its edges should be flattened out, angles should become lines, breakage becomes continuance. If a poem is a machine, its edges are the content of the poem. They are where the eyes glance when this object is held. Its purpose is to follow the piping to the source of what it contains. Its purpose is to hold the wiring to maybe feel the current it contains. It is not difficult to sense the contradiction here. The rudimentary, flattened lines are just a simple and efficient machine. The container must contain something even if it is just containment. 
