@@ -1,0 +1,71 @@
+---
+import Layout from "../components/Layout.astro";
+import { getCollection } from "astro:content";
+
+const poems = await getCollection("poems");
+const essays = await getCollection("essays");
+
+// Sort poems by date, most recent first
+poems.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+// Sort essays by date, most recent first
+essays.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<Layout title="Home | AI, Aesthetics, and Poetics">
+  <h1>AI, Aesthetics, and Poetics</h1>
+
+  <p>
+    Welcome to a space where experimental poetry and essays about AI and
+    aesthetics converge.
+  </p>
+
+  <h2>Recent Poems</h2>
+  <ul>
+    {
+      poems.slice(0, 5).map((poem) => (
+        <li>
+          <a href={`/poems/${poem.slug}`}>{poem.data.title}</a>
+          <p>Published on: {poem.data.date.toDateString()}</p>
+        </li>
+      ))
+    }
+  </ul>
+
+  <h2>Recent Essays</h2>
+  <ul>
+    {
+      essays.slice(0, 5).map((essay) => (
+        <li>
+          <a href={`/essays/${essay.slug}`}>{essay.data.title}</a>
+          <p>Published on: {essay.data.date.toDateString()}</p>
+        </li>
+      ))
+    }
+  </ul>
+</Layout>
+
+<style>
+  h1,
+  h2 {
+    margin-bottom: 0.5em;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 1em;
+  }
+
+  a {
+    color: #333;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+</style>

@@ -1,0 +1,87 @@
+---
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <style>
+      :root {
+        --GW-serif-font-stack: "Source Serif Pro", "Apple Garamond",
+          "Baskerville", "Libre Baskerville", "Droid Serif", "Times New Roman",
+          "Times", serif, "Noto Emoji", "Quivira";
+      }
+      body {
+        line-height: 1.4;
+        font-size: 16px;
+        padding: 0 25px;
+        margin: 25px auto;
+        max-width: 650px;
+        font-family: var(--GW-serif-font-stack);
+      }
+      .navbar {
+        text-align: center;
+        font-size: 0.8em;
+        margin-bottom: 20px;
+      }
+      .navbar a {
+        text-decoration: none;
+        color: #333;
+        margin: 0 15px;
+        display: inline-block;
+      }
+      .navbar a:hover {
+        text-decoration: underline;
+      }
+      .navbar a.full {
+        display: inline;
+      }
+      .navbar a.abbr {
+        display: none;
+      }
+      @media (max-width: 480px) {
+        .navbar a.full {
+          display: none;
+        }
+        .navbar a.abbr {
+          display: inline;
+        }
+        .navbar {
+          font-size: 1em;
+          margin-bottom: 10px;
+        }
+      }
+      /* Add any additional styles here */
+    </style>
+  </head>
+  <body>
+    <nav class="navbar clearfix">
+      <a href="/" class="full">Home</a><a href="/" class="abbr">H</a> |
+      <a href="/poems" class="full">Poems</a><a href="/poems" class="abbr">P</a>
+      |
+      <a href="/poetics" class="full">Poetics</a><a href="/poetics" class="abbr"
+        >Po</a
+      > |
+      <a href="/ai-theory" class="full">AI Theory</a><a
+        href="/ai-theory"
+        class="abbr">AI</a
+      > |
+      <a href="/generative-art" class="full">Generative Art</a><a
+        href="/generative-art"
+        class="abbr">GA</a
+      > |
+      <a href="/about" class="full">About</a><a href="/about" class="abbr">A</a>
+    </nav>
+
+    <main id="maincontent">
+      <slot />
+    </main>
+
+    <!-- Newsletter signup form -->
+    <div id="mc_embed_signup">
+      <!-- Insert the newsletter signup form HTML here -->
+    </div>
+  </body>
+</html>

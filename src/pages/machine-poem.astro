@@ -1,0 +1,73 @@
+---
+import Layout from "../components/Layout.astro";
+---
+
+<Layout title="Machine Poem">
+  <h1>Machine Poem</h1>
+  <div class="poem">
+    <table>
+      <tr>
+        <td>Gears</td>
+        <td>[T]urn[,]</td>
+        <td>[P]owering[,]</td>
+        <td>[T]he</td>
+        <td>[E]ngine[.]</td>
+      </tr>
+      <tr>
+        <td>[T]urn[,]</td>
+        <td>wheels,</td>
+        <td>rotate[the]</td>
+        <td>gears</td>
+        <td>[smoothly][.]</td>
+      </tr>
+      <tr>
+        <td>[P]owering</td>
+        <td>pistons,</td>
+        <td>wheels[,]</td>
+        <td>drive</td>
+        <td>shafts[.]</td>
+      </tr>
+      <tr>
+        <td>[T]he</td>
+        <td>engine[and]</td>
+        <td>run[s],</td>
+        <td>pistons[']</td>
+        <td>move[.]</td>
+      </tr>
+      <tr>
+        <td>[E]ngine[.]</td>
+        <td>gears[.]</td>
+        <td>drive[.]</td>
+        <td>parts[.]</td>
+        <td>efficiently.</td>
+      </tr>
+    </table>
+  </div>
+</Layout>
+
+<style>
+  .poem {
+    margin: 2em 0;
+    font-family: var(--GW-serif-font-stack);
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td {
+    padding: 0.5em;
+    text-align: left;
+    vertical-align: top;
+    font-size: 1.1em;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 600px) {
+    td {
+      font-size: 0.9em;
+      padding: 0.3em;
+    }
+  }
+</style>
